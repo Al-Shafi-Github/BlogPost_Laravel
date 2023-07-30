@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExampleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return '<h1>HomePage</h1> <a href="/about">About </a>';
-});
+Route::get('/', [ExampleController::class, "homepage"]);
 
-Route::get('/about', function () {
-    return '<h1>About page</h1> <a href="/"> Home </a>';
-});
+Route::get('/about', [ExampleController::class, "aboutPage"]);
